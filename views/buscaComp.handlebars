@@ -1,0 +1,198 @@
+
+
+<style>
+
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: white;
+    }
+
+    form >div:nth-child(1) > div > input{
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        height: 32px;
+        font-size: 20px;
+        max-width: 400px;
+    }
+    
+    form> div:nth-child(2) > input{
+            max-width: 400px;
+            background-color: palegreen;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0px 1px 3px 0px darkgreen;
+            height: 32px;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+    form{
+            background-color: skyblue;
+            border-radius: 10px;
+    }    
+
+    @media (min-width:841px) {
+        
+        form{
+            
+            min-height: 150px;
+          
+        }
+        
+        form > div:nth-child(1){
+            width: 100%;
+            margin-bottom:20px ;
+            margin-top: 15px ;
+        }
+
+        form> div:nth-child(1) >input{
+            width: 25%;
+            margin: 10px;
+        }
+
+        form > div:nth-child(2){
+            margin-bottom: 20px;
+
+        }
+
+        
+    }
+
+    @media (max-width:840px) {
+       form{
+           flex-direction: column;
+       } 
+
+        form> div:nth-child(1) > div{
+           display: flex;
+           flex-direction: column;
+           align-items: start;
+           margin-bottom: 10px;
+           width: 60%;
+       }
+
+       form > div:nth-child(1){
+           margin-bottom: 20px ;
+           flex-direction: column;
+           width: 100%;
+       }
+       form > div:first-child> div> input{
+           width: 100%;
+           
+       }
+
+       form > div:first-child> div>{
+           
+           margin-top: 10px;
+           
+       }
+       
+       form > div:first-child > div > label{
+           font-size: 18px;
+           font-family: Arial, Helvetica, sans-serif;
+       }
+
+       form > div:nth-child(2){
+           width: 200px;
+           margin-bottom: 20px;
+       }
+    }
+</style>
+
+
+
+
+
+
+
+<div style="width: 100%; heigth:100%" >
+
+    
+    
+    
+ 
+
+<form style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-around; margin-top:20px; margin-bottom:20px; "  action="/buscaComp" method="POST">
+
+<div style="display: flex; align-items:center; justify-content:space-around;">
+
+<div>
+<label >Id</label>
+<input type="text" name="id" id="buscaCompid">
+</div>
+
+<div>
+<label >Nome</label>
+<input type="text" name="nome" id="buscaCompnome">
+</div>
+
+<div>
+<label >Descrição</label>
+<input type="text" name="descricao" id="buscaCompdesc">    
+</div>
+
+
+</div>
+
+
+<div style="display:flex; align-items:center; justify-content:center" >
+<input style="min-width:190px;  width:60%; " type="submit" value="Buscar">
+</div>
+
+
+</form>
+
+
+{{#if busca.buscacompnte}}
+
+<div style="text-align: center;">
+    <h1>RESULTADO DA BUSCA</h1>
+</div>
+    
+
+<table style="margin:auto; margin-top:20px; max-width:100%;" class="table" cellspacing="0">
+        <tr style="border-bottom: 1.5px solid black; background-color: rgb(245,245,245); text-align:center">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descricao</th>
+            
+        </tr>
+
+
+    {{#each busca.buscacompnte}}
+
+        <tr style="border-top: 1.5px solid black; background-color: rgb(217,237,247); text-align:center">
+
+
+            
+             <td>{{id}} </td>
+             <td>{{nome}} </td>
+             <td>{{descricao}} </td>
+             
+            
+
+        
+        </tr>
+
+    {{/each}}
+        
+    </table>
+
+{{/if}}
+
+</div>
+
+<p style="display:none;" id="title"> {{busca.title}}</p>
+
+<script >
+
+const titulo = document.getElementById("title").outerText;
+document.title = titulo;
+
+
+</script>

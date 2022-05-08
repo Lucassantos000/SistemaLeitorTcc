@@ -1,0 +1,84 @@
+    <style>
+        
+       .nav-bar{
+           background-color: black;
+           width: 100%;
+           min-height: 60px;
+
+           display: flex;
+           align-items: center;
+           justify-content: space-evenly;
+
+       }
+
+    .nav-bar > div > h1{
+    font-family: "Koulen", Rajdhani;
+    margin:auto;
+    color: white;
+        }
+
+    </style>
+
+<div class="nav-bar"> 
+        
+        <div>
+
+        </div>
+
+            <div>
+                <h1>MICHAELSOFTWARE</h1>
+            </div>
+            
+        <div>
+
+        </div>
+        
+
+    </div>
+
+
+    
+    <div  class="wraping-cad">
+
+        <h1 class="title-cad">Cadastro de Componentes</h1>
+ 
+        <div class="">
+        {{!-- <form class="class-form-cad" id="fomrulario" action="cadcomp" method="post" ></form> --}}
+        <form class="class-form-cad" id="fomrulario" >
+
+            <div class="div-input-cad">
+            <p class="identificador">NOME</p>
+            <input class="input-cad" id="nome"  name="nome" type="text" pattern="^[^-\s][a-zA-ZÀ-ú1-9 ]*" autocomplete="off" required="required" placeholder="Nome do Componente" >
+            </div>
+
+            <div class="div-input-cad">
+            <p class="identificador">DESCRIÇÃO</p>
+            <input class="input-cad"  id="descricao" autocomplete="false"  name="descricao" type="text" required="required" placeholder="Descrição do Componente" >
+            </div>
+        
+            <div class="div-input-cad">
+            
+            <input id="btn-cad" type="button" value="Enviar">
+            
+            </div>
+            
+            
+
+        </form>
+
+        <div class="lista">
+            <a style="text-decoration: none;" href="http://localhost:3333/buscaerro"> <p >Pesquisar componente</p> </a>
+            <a style="text-decoration: none;" href="http://localhost:3333/">  <p>Teste de código</p></a> 
+        </div>
+
+        </div>
+
+    </div>
+    
+
+
+
+    
+
+    
+
